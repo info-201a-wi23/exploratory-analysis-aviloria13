@@ -106,8 +106,9 @@ Include a chart
 
 Describe why you chose this chart and what information it reveals
 
-### Chart 3
+### Chart 3: Music Genre vs Music Effects
 
-Include a chart
+```{r, echo = FALSE, code = readLines("Chart 3.R"), warning = FALSE, message = FALSE, fig.width = 12}
+```
 
 Describe why you chose this chart and what information it reveals
