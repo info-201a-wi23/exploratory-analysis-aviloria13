@@ -1,15 +1,11 @@
 ---
-title: "Exploratory Analysis"
+title: "Mental Health & Music"
 output: html_document
 ---
 
-## Project title
-
-Give your project a concise, interesting title that summarizes the entirety of your project
-
 ### Authors
 
-Names of your team members
+Alice Chen, Aaliyah Viloria, Siyi Xu, Michelle Zhang 
 
 ### Date
 
@@ -17,38 +13,71 @@ Winter 2022
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Our main question is how do music-listening habits relate to the listener's mental health? This question is important because music is a powerful tool that can affect people's lives on varying levels. To address the question, we will analyze a dataset containing information on respondent's age, number of hours respondents listen to music per day, self-reported mental health disorders, and the overall effect of music on respondent's mental health.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Mental Health, Music, Music Therapy
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+For our project, we wanted to explore the relationship between mental health and music-listening habits. We decided on this topic due to the significance of music in our daily lives, and the effect it has on us. We plan to examine a dataset of over 700 survey results containing information on respondent's age, the number of hours respondents listen to music per day, self-reported mental health disorders (anxiety, depression, insomnia, OCD), and the overall effect of music on respondent's mental health conditions, to answer our research questions. Three main questions we want to answer are: 
+* How often do respondents listen to music per day?
+* Do respondents generally listen to music while performing other tasks (studying, working, etc)? If so, does it allow them to work on tasks more efficiently?
+* Does music improve or worsen a respondent's mental health conditions overall?
+
+These questions are important for our research as it allows us to find correlations between music and mental health, and answer other related questions such as "does an increase in the number of hours the respondent listens to music per day correspond to a better mental health state?", and if certain habits like multitasking can be of benefit for one's mental health.
 
 ### Related Work  
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+Music is a crucial element of everyday life for most people. It plays a big role in people's cultures and backgrounds and is often played or listened for all ages. It can be a crucial part of developmental stages in early life and create healthy bonds with one another. Music is a versatile instrument that can be used not only for entertainment but for mental health purposes as well. 
+  1. In the study titled, [Comparing Educational Music Therapy Interventions via Stages of Recovery with Adults in an Acute Care Mental Health Setting](https://doi.org/10.1007/s10597-019-00380-1), researchers performed studies that compared 69 adult patients in an acute mental health unit. They made three groups, the controlled, educational lyrical analysis group (ELA), and the educational songwriting (ESW) which contributed to the question of wheater music helped these patients in these units during their time of recovery. Although there wasn't a significant difference between the groups, it still showed a better overall score of recovery compared to the control group. 
+  2. On the other hand, a review article called, [Music, mental health, and immunity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8566759/) talks about the importance of music therapy. It involves a therapeutic process developed between the patient and their therapist through the use of personalized music experiences. Utilizing music to treat mental illnesses such as anxiety, depression, and schizophrenia has improved symptoms, This is because music therapy allows patients to express emotions while at a stage of relaxation and feelings of safety. In addition, there have been studies showing that listening to pleasurable music increases the release of dopamine and network connectivity. 
+  3. Finally, an article published by AAPR called [Music Can Be a Great Mood Booster](https://www.aarp.org/health/brain-health/info-2020/music-mental-health.html) ask the questions of how music can impact your life. It describes music therapy as an established healthcare profession. In a study of 3,185 participants, they found that using music came to approach goals of decreasing pain, finding motivation, and helping with depression. Also, decrease the levels of cortisol during times of stress or prolonged stress.
+
+References
+
+Adler, S. E. (2022, August 10). Positive effects of music for Mental Health. AARP. Retrieved February 1, 2023, from https://www.aarp.org/health/brain-health/info-2020/music-mental-health.html 
+    
+Rebecchini L. Music, mental health, and immunity. Brain Behav Immun Health. 2021 Oct 21;18:100374. doi: 10.1016/j.bbih.2021.100374. PMID: 34761245; PMCID: PMC8566759.
+    
+Silverman, M.J. Comparing Educational Music Therapy Interventions via Stages of Recovery with Adults in an Acute Care Mental Health Setting: A Cluster-Randomized Pilot Effectiveness Study. Community Ment Health J 55, 624–630 (2019). https://doi.org/10.1007/s10597-019-00380-1 
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+Where did you find the data? Please include a link to the data source
+* We found the data on Kaggle: [an external link to the data source](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results?resource=download). 
+
+Who collected the data?
+* It was collected by Catherine Rasgaitis, an undergraduate from the University of Washington. 
+
+How was the data collected or generated?
+* The data was collected via a Google form which was posted on several social media platforms such as Reddit or Discord. 
+* Rasgaitis also propagandized the form in public locations such as libraries as posters or business cards. In this form with only brief questions, respondents ranked how frequently they listened to each of 16 musical genres, and ranked Anxiety, Depression, Insomnia, and OCD on a scale of 0 to 10. 
+
+Why was the data collected?
+* The data was collected because Rasgaitis aimed to find out any correlations between a person's musical preferences and their self-reported mental health, which wished to provide insights into how music therapy could be used as a treatment of mental health problems.
+
+How many observations (rows) are in your data?
+* There are 737 rows that each represents an individual respondent.
+
+How many features (columns) are in the data?
+* There are 33 features in the data. 
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+* One ethical question that we need to consider is to respect respondents' privacy. The last column (feature) of the data records whether the respondent permits to publicize the data which contains his/her personal information. 
+
+What are possible limitations or problems with this data? (at least 200 words)
+* A possible limitation with this data is that it is mainly collected through certain online platforms. Although the respondents are not limited by age or location, the process of data collection itself might exclude those who do not use these online platforms, which leads to a limited sample size. 
+* Another limitation is that the data does not include additional questions about demographics (country, sex, etc.) which could add more interesting insights. Similarly, there are other unrepresented music genres which may also help identify the relationship between music taste and mental health.
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+Exploring the correlations between an individual's music taste and their mental health can help us to get an ideal understanding on how music therapy improves an individual's stress, mood, and overall mental health. The finding that music therapy is an effective way to improve an individual's mood can help people who are suffering from the mental health issues to know the way to promote mental health by using music therapy. Assuming answers to the research questions, the time respondents spend on music services can help us to know the best time duration for improving mood. For example, finding out the best time duration can prevent people from listening too long to cause the tiring mood and noisy feeling. The dataset can also help us to know how music impacts our ability when performing the tasks, finding out the most suitable music genre for healing and working. The possible implication for technologists could be implementing the function in a music platform to be able to organize the types of music and utilities of music by personal preference. For example, the music platform can have a category about music therapy with music that the therapist recommended and the music people personally like. Therefore, studying the relationship between an individual's music taste and mental health allows people to know that different music genres have different impacts on people's mood, so people can use music therapy to listen to specific music genres to heal their emotion.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+One of the limitations that our group project faces is that respondents assess their mental health only by self-report. The self-report exists a problem that respondents may not assess themselves accurately on self-report, and they may feel too embarrassed to reveal the truth by choosing a more acceptable choice. Also, the method of measuring mental health based on asking questions on whether they experience the disorders is not detailed and precise. People who do not have any psychological knowledge are unaware of the symptoms of these mental illnesses, so they may choose a low score on rating scale even if they do experience them. Therefore, the limitation of self-report may cause the probability of providing invalid information. Another limitation is that there is a low externality validity on generalization. The dataset has missing information on demographics and some genres that are not common, and the information of gender and race and other small music genres might provide interesting information to help find the relationship. In addition, the primary streaming service is Spotify, so the lack of music platforms might also impact generalization. The challenges that our group might face are the large size of the dataset and complex category of music genres. The size of our dataset is large with 737 respondents and 16 types of music genres, so they are more complex than what we usually work with. Another issue we will face is that some information on effect is missing, so we have to find out whether it impacts or not manually. It is important to acknowledge these limitations and challenges to the dataset in order to have a better understanding on the relationship between music and mental health and how it improves mental health. 
 
 ### Summary Information
 
