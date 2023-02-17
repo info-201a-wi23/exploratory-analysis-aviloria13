@@ -35,3 +35,4 @@ ggplot(new_mef_df, aes(x = Music_Genre, y = value, fill = variable, label = valu
        x = "Music Genre",
        y = "Number of People Who Report 'Improve'",
        fill = "Frequency") 
+
