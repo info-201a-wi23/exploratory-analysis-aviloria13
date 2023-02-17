@@ -26,8 +26,9 @@ mef_df <- mef_df %>%
   
 new_mef_df <- melt(mef_df, id.vars = "Music_Genre")
 
-ggplot(data = new_mef_df) +
-  geom_bar(aes(x = Music_Genre, y = value, fill = variable), stat = "identity", position = "stack") +
+ggplot(new_mef_df, aes(x = Music_Genre, y = value, fill = variable, label = value)) +
+  geom_bar(stat = "identity") +
+  geom_text(size = 3, position = position_stack(vjust = 0.5)) +
   scale_fill_brewer(palette = "Pastel2") +
   scale_y_continuous(breaks = c(50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550)) +
   labs(title = "Music Genre vs Music Effects",
