@@ -81,13 +81,14 @@ One of the limitations that our group project faces is that respondents assess t
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+This dataset about mental health and music includes 736 responses, and 33 features. We have compared listening habits and effects between each number of listening hours in the aggregate table and the three charts below). There are 27 groups of listening hours. Out of all the respondents, 78.67% listen to music while working/studying, Rock is the most common genre listened to, 73.64% reported improved health, 2.31% reported worsened health, 22.96% reported no effect of music on their mental health, and the remaining 1.09% did not respond to the question. 
 
 ### Table: Aggregate Music-Listening Data by Number of Listening Hours per Day
 
-Include a table of aggregate information
+``````{r, echo = FALSE, code = readLines("Aggregate.R")}
+```
 
-Describe why you included the table and what information it reveals
+This table shows aggregate information on listening behavior and the effects of such behavior on mental health, for varying listening hours per day. It is in ascending numerical order of the listening hours, and includes information about the number of responses, the most common age of the respondents, percentage of improved health, worsened health, and non-effected health, most common genre listened to, and percentage of respondents who listen to music while working/studying, all of which, were calculated for each group of listening hours. Looking at a table with 736 rows can be very complicated, especially when you're comparing values that are grouped by a certain attribute (e.g. compare data values between respondents of the age 18 vs. age 42), because the attribute may be spread out throughout a column. We created this aggregate table to make it easier to do such comparing, and we specifically grouped the data by the number of listening hours, because we wanted to see how the data varies with an increase in listening hours, especially how it has affected respondents' mental health. For all but 5 of the listening hour groups, at least 50% of the respondents reported improved health (with "no effect" being the majority response for the 5 groups). The first third of the groups (0 ot 2.5 listening hours) had an average of 63.21% improved health, the second third (3 to 10 hours) had an average of 73.22%, and the last third (11 to 24 hours) had an average of 64.82%. While it is difficult to compare these three percentage values between each other, because the number of responses for each group vary greatly (e.g. 1 response could result in 100% improved health), the averages being greater than 50% can show that music brings improvement to mental health overall.
 
 ### Chart 1
 
