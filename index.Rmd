@@ -97,20 +97,17 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
-### Chart 2
-
-Include a chart
-
-Describe why you chose this chart and what information it reveals
+### Chart 2: While listening & Music effects
+```{r, echo = FALSE, code = readLines("Chart 2.R"), warning=FALSE, message=FALSE, fig.width = 10}
+```
+The reason I use pie chart is that it is very clear to see the percentage of effects on how music can impact people when they are doing their tasks or not. It is obvious to see the different groups and their percentage slices to illustrate numerical proportion. There are 5 groups in this dataset. The group of "while work and effective" refers to the group of people who are listening to music while working and also have positive effects. The group of "while work and not effective" refers to the group of people who are listening to music while working and do not have effects. Also, the group of "not while working and effective" means the group of people who not listen to music while working and have positive effects. The group of "not while working and not effective" refers to the group of people who not listen to music while working and have no effects. The fifth group "else" is the group of people with missing information and have worsen effects. As shown in this pie chart, it reveals that there are 61.01 percent of people who listen to music while working and have positive effects, 15.35 percent of people listen to music while working and do not have any effects, 12.5 percent of people not listen to music while working and have positive effects, 7.47 percent of people do not listen to music while working and have no effects, and lastly 3.67% of people with lack of information. Therefore, it obviously demonstrates that people in this dataset largely show music has positive effect on mental health and work emotion when listening to music while working.
 
 ### Chart 3: Music Genre vs Music Effects
-
 ```{r, echo = FALSE, code = readLines("Chart 3.R"), warning = FALSE, message = FALSE, fig.width = 10}
 ```
-
 The stacked bar chart represents the number of respondents who report "Improve" in terms of music effects within each music genre (16 music genres in total). Each bar is divided into 4 sub-bars stacked end to end, each sub-bar corresponding to levels of frequency of listening to each music genre, marked by "never, rarely, sometimes, very frequently".
 
 The reason why I choose this stacked bar chart is that it can clearly show how each music genre has a impact on people's mental health based on how often they listen to certain type of music. The length of each sub-bar demonstrates which music genre influences people's mental health the most. By evaluating this chart, we can see that listening to rock music very frequently can have the most postive impact on people's mental health.
