@@ -9,7 +9,7 @@ Alice Chen, Aaliyah Viloria, Siyi Xu, Michelle Zhang
 
 ### Date
 
-Winter 2022
+Winter 2023
 
 ### Abstract
 
@@ -108,7 +108,9 @@ Describe why you chose this chart and what information it reveals
 
 ### Chart 3: Music Genre vs Music Effects
 
-```{r, echo = FALSE, code = readLines("Chart 3.R"), warning = FALSE, message = FALSE, fig.width = 12}
+```{r, echo = FALSE, code = readLines("Chart 3.R"), warning = FALSE, message = FALSE, fig.width = 10}
 ```
 
-Describe why you chose this chart and what information it reveals
+The stacked bar chart represents the number of respondents who report "Improve" in terms of music effects within each music genre (16 music genres in total). Each bar is divided into 4 sub-bars stacked end to end, each sub-bar corresponding to levels of frequency of listening to each music genre, marked by "never, rarely, sometimes, very frequently".
+
+The reason why I choose this stacked bar chart is that it can clearly show how each music genre has a impact on people's mental health based on how often they listen to certain type of music. The length of each sub-bar demonstrates which music genre influences people's mental health the most. By evaluating this chart, we can see that listening to rock music very frequently can have the most postive impact on people's mental health.
