@@ -83,7 +83,7 @@ One of the limitations that our group project faces is that respondents assess t
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
-### Table
+### Table: Aggregate Music-Listening Data by Number of Listening Hours per Day
 
 Include a table of aggregate information
 
