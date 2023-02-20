@@ -62,14 +62,9 @@ Describe why you included the table and what information it reveals
 
 ### Chart 1
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, code = readLines("Chart1.R"), warning= FALSE, message= FALSE, fig.width = 10}
 ```
+We choose to do a line graph comparing the different types of music effects in percentage against the number of hours that people listen to music. We decided on using a line graph because it shows the changes over time as a series of data points connected by a line in order to determine the relationship between two sets of values. Which in this case are the hours and the percentage.
 
 ### Chart 2
 
