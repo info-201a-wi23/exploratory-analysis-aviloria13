@@ -1,4 +1,4 @@
-music_df <- read.csv("/Users/miczhang/Desktop/final_pro201/exploratory-analysis-aviloria13/mxmh_survey_results.csv", stringsAsFactors = F)
+music_df <- read.csv("mxmh_survey_results.csv", stringsAsFactors = F)
 View(music_df)
 
 library(tidyverse)
