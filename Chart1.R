@@ -45,12 +45,12 @@ music_effects <- left_join(music_effects, worsen, by = "Hours_per_day")
 music_effects <- left_join(music_effects, no_effect, by = "Hours_per_day")
 
 ggplot(music_effects) + 
-  geom_point(mapping = aes(x = Hours_per_day, y = percentage_improved, color = "pink")) + 
-  geom_line(mapping = aes(x = Hours_per_day, y = percentage_improved, color = "pink")) +
-  geom_point(mapping = aes(x = Hours_per_day, y = percentage_worsened, color = "blue")) + 
-  geom_line(mapping = aes(x = Hours_per_day, y = percentage_worsened, color = "blue")) +
-  geom_point(mapping = aes(x = Hours_per_day, y = percentage_no_effect, color = "green")) + 
-  geom_line(mapping = aes(x = Hours_per_day, y = percentage_no_effect, color = "green")) +
+  geom_point(mapping = aes(x = Hours_per_day, y = percentage_improved, color = "improved")) + 
+  geom_line(mapping = aes(x = Hours_per_day, y = percentage_improved, color = "improved")) +
+  geom_point(mapping = aes(x = Hours_per_day, y = percentage_worsened, color = "wrosen")) + 
+  geom_line(mapping = aes(x = Hours_per_day, y = percentage_worsened, color = "wrosen")) +
+  geom_point(mapping = aes(x = Hours_per_day, y = percentage_no_effect, color = "no effect")) + 
+  geom_line(mapping = aes(x = Hours_per_day, y = percentage_no_effect, color = "no effect")) +
   labs(title = "Hours of music and its effects", x = "Hours", y = "Percentage", color = "Music Effects")
 
 
