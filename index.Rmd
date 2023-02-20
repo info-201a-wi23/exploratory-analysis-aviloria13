@@ -22,6 +22,7 @@ project_df <- read.csv("/Users/aaliyahviloria/Desktop/INFO201/exploratory-analys
 # source all R files
 source('Summary.R')
 source('Aggregate.R')
+source('Chart1.R')
 source('Chart 2.R')
 source('Chart 3.R')
 ```
@@ -142,7 +143,7 @@ This table shows aggregate information on listening behavior and the effects of 
 
 ### Chart 1: Hours vs Percentage 
 
-```{r, echo = FALSE, code = readLines("Chart1.R"), warning= FALSE, message= FALSE, fig.width = 10}
+```{r, echo = FALSE, code = readLines("Chart1.R"), warning= FALSE, message=FALSE, fig.width = 10}
 ```
 A line graph because it shows the changes over time as a series of data points connected by a line in order to determine the relationship between two sets of values. Which in this case are the hours and the percentage. It shows the Music effects of being "Improved", "No effect", and "Worsened" over the period of time people listen to music in color coded lines. 
 
