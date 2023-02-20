@@ -140,16 +140,14 @@ knitr::kable(aggregate,
 
 This table shows aggregate information on listening behavior and the effects of such behavior on mental health, for varying listening hours per day. It is in ascending numerical order of the listening hours, and includes information about the number of responses, the most common age of the respondents, percentage of improved health, worsened health, and non-effected health, most common genre listened to, and percentage of respondents who listen to music while working/studying, all of which, were calculated for each group of listening hours. Looking at a table with 736 rows can be very complicated, especially when you're comparing values that are grouped by a certain attribute (e.g. compare data values between respondents of the age 18 vs. age 42), because the attribute may be spread out throughout a column. We created this aggregate table to make it easier to do such comparing, and we specifically grouped the data by the number of listening hours, because we wanted to see how the data varies with an increase in listening hours, especially how it has affected respondents' mental health. For all but 5 of the listening hour groups, at least 50% of the respondents reported improved health (with "no effect" being the majority response for the 5 groups). The first third of the groups (0 ot 2.5 listening hours) had an average of 63.21% improved health, the second third (3 to 10 hours) had an average of 73.22%, and the last third (11 to 24 hours) had an average of 64.82%. While it is difficult to compare these three percentage values between each other, because the number of responses for each group vary greatly (e.g. 1 response could result in 100% improved health), the averages being greater than 50% can show that music brings improvement to mental health overall.
 
-### Chart 1
+### Chart 1: Hours vs Percentage 
 
-Include a chart
-
-Describe why you chose this chart and what information it reveals
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("Chart1.R"), warning= FALSE, message= FALSE, fig.width = 10}
 ```
+A line graph because it shows the changes over time as a series of data points connected by a line in order to determine the relationship between two sets of values. Which in this case are the hours and the percentage. It shows the Music effects of being "Improved", "No effect", and "Worsened" over the period of time people listen to music in color coded lines. 
+
+The graph shows the difference that music made a difference in how people felt and improvement on their mood and well-being
+as much of the results is highly favorable to music and its improvements. And less people felt that music actually worsen their well-being and mood. By looking at this graph, we see that listening to music have some positive effects on people's mental health and overall well-being. 
 
 ### Chart 2: While listening & Music effects
 ```{r, echo = FALSE, code = readLines("Chart 2.R"), warning=FALSE, message=FALSE, fig.width = 10}
