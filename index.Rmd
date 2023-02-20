@@ -45,17 +45,25 @@ Mental Health, Music, Music Therapy
 ### Introduction  
 
 For our project, we wanted to explore the relationship between mental health and music-listening habits. We decided on this topic due to the significance of music in our daily lives, and the effect it has on us. We plan to examine a dataset of over 700 survey results containing information on respondent's age, the number of hours respondents listen to music per day, self-reported mental health disorders (anxiety, depression, insomnia, OCD), and the overall effect of music on respondent's mental health conditions, to answer our research questions. Three main questions we want to answer are: 
+
 * How often do respondents listen to music per day?
+
 * Do respondents generally listen to music while performing other tasks (studying, working, etc)? If so, does it allow them to work on tasks more efficiently?
+
 * Does music improve or worsen a respondent's mental health conditions overall?
+
+* Is there a correlation between listening hours, and the respondents' age and preferred genre?
 
 These questions are important for our research as it allows us to find correlations between music and mental health, and answer other related questions such as "does an increase in the number of hours the respondent listens to music per day correspond to a better mental health state?", and if certain habits like multitasking can be of benefit for one's mental health.
 
 ### Related Work  
 
 Music is a crucial element of everyday life for most people. It plays a big role in people's cultures and backgrounds and is often played or listened for all ages. It can be a crucial part of developmental stages in early life and create healthy bonds with one another. Music is a versatile instrument that can be used not only for entertainment but for mental health purposes as well. 
+  
   1. In the study titled, [Comparing Educational Music Therapy Interventions via Stages of Recovery with Adults in an Acute Care Mental Health Setting](https://doi.org/10.1007/s10597-019-00380-1), researchers performed studies that compared 69 adult patients in an acute mental health unit. They made three groups, the controlled, educational lyrical analysis group (ELA), and the educational songwriting (ESW) which contributed to the question of wheater music helped these patients in these units during their time of recovery. Although there wasn't a significant difference between the groups, it still showed a better overall score of recovery compared to the control group. 
+  
   2. On the other hand, a review article called, [Music, mental health, and immunity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8566759/) talks about the importance of music therapy. It involves a therapeutic process developed between the patient and their therapist through the use of personalized music experiences. Utilizing music to treat mental illnesses such as anxiety, depression, and schizophrenia has improved symptoms, This is because music therapy allows patients to express emotions while at a stage of relaxation and feelings of safety. In addition, there have been studies showing that listening to pleasurable music increases the release of dopamine and network connectivity.
+  
   3. Finally, an article published by AAPR called [Music Can Be a Great Mood Booster](https://www.aarp.org/health/brain-health/info-2020/music-mental-health.html) ask the questions of how music can impact your life. It describes music therapy as an established healthcare profession. In a study of 3,185 participants, they found that using music came to approach goals of decreasing pain, finding motivation, and helping with depression. Also, decrease the levels of cortisol during times of stress or prolonged stress.
 
 References
@@ -69,29 +77,39 @@ Silverman, M.J. Comparing Educational Music Therapy Interventions via Stages of 
 ### The Dataset
 
 Where did you find the data? Please include a link to the data source
+
 * We found the data on Kaggle: [an external link to the data source](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results?resource=download). 
 
 Who collected the data?
+
 * It was collected by Catherine Rasgaitis, an undergraduate from the University of Washington. 
 
 How was the data collected or generated?
+
 * The data was collected via a Google form which was posted on several social media platforms such as Reddit or Discord. 
+
 * Rasgaitis also propagandized the form in public locations such as libraries as posters or business cards. In this form with only brief questions, respondents ranked how frequently they listened to each of 16 musical genres, and ranked Anxiety, Depression, Insomnia, and OCD on a scale of 0 to 10. 
 
 Why was the data collected?
+
 * The data was collected because Rasgaitis aimed to find out any correlations between a person's musical preferences and their self-reported mental health, which wished to provide insights into how music therapy could be used as a treatment of mental health problems.
 
 How many observations (rows) are in your data?
+
 * There are 737 rows that each represents an individual respondent.
 
 How many features (columns) are in the data?
+
 * There are 33 features in the data. 
 
 What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
 * One ethical question that we need to consider is to respect respondents' privacy. The last column (feature) of the data records whether the respondent permits to publicize the data which contains his/her personal information. 
 
 What are possible limitations or problems with this data? (at least 200 words)
+
 * A possible limitation with this data is that it is mainly collected through certain online platforms. Although the respondents are not limited by age or location, the process of data collection itself might exclude those who do not use these online platforms, which leads to a limited sample size. 
+
 * Another limitation is that the data does not include additional questions about demographics (country, sex, etc.) which could add more interesting insights. Similarly, there are other unrepresented music genres which may also help identify the relationship between music taste and mental health.
 
 ### Implications
@@ -109,8 +127,6 @@ This dataset about mental health and music includes `r summary_info$num_response
 ### Table: Aggregate Music-Listening Data by Number of Listening Hours per Day
 
 ```{r agg_table}
-table_caption <- "Aggregate Music-Listening Data by Number of Listening Hours per Day"
-
 knitr::kable(aggregate,
              col.names = c("Hours per Day", 
                            "Number of Reponses", 
@@ -119,8 +135,7 @@ knitr::kable(aggregate,
                            "Percentage of Worsened Health", 
                            "Percentage of No Health Effect", 
                            "Majority Genre", 
-                           "Percentage of Listening While Working/Studying"),
-             caption = table_caption)
+                           "Percentage of Listening While Working/Studying"))
 ```
 
 This table shows aggregate information on listening behavior and the effects of such behavior on mental health, for varying listening hours per day. It is in ascending numerical order of the listening hours, and includes information about the number of responses, the most common age of the respondents, percentage of improved health, worsened health, and non-effected health, most common genre listened to, and percentage of respondents who listen to music while working/studying, all of which, were calculated for each group of listening hours. Looking at a table with 736 rows can be very complicated, especially when you're comparing values that are grouped by a certain attribute (e.g. compare data values between respondents of the age 18 vs. age 42), because the attribute may be spread out throughout a column. We created this aggregate table to make it easier to do such comparing, and we specifically grouped the data by the number of listening hours, because we wanted to see how the data varies with an increase in listening hours, especially how it has affected respondents' mental health. For all but 5 of the listening hour groups, at least 50% of the respondents reported improved health (with "no effect" being the majority response for the 5 groups). The first third of the groups (0 ot 2.5 listening hours) had an average of 63.21% improved health, the second third (3 to 10 hours) had an average of 73.22%, and the last third (11 to 24 hours) had an average of 64.82%. While it is difficult to compare these three percentage values between each other, because the number of responses for each group vary greatly (e.g. 1 response could result in 100% improved health), the averages being greater than 50% can show that music brings improvement to mental health overall.
