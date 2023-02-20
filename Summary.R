@@ -21,23 +21,25 @@ num_responses <- nrow(project_df)
 while_working <- project_df %>% count(true_false = While.working == "Yes")
 while_working <- while_working %>% filter(true_false == "TRUE")
 num_while_working <- while_working %>% pull(n)
-summary_info$percent_while_working <- round((num_while_working / num_responses) * 100, digits = 2)
+summary_info$percent_while_working <- paste0(round((num_while_working / num_responses) * 100, digits = 2), "%")
 
- # What is the most common genre of music respondents listen to?
+# What is the most common genre of music respondents listen to?
 summary_info$common_genre <- names(which.max(table(project_df$Fav.genre)))
 
 # What is the percentage of improved health? worsened? no effect?
 improved_responses <- project_df %>% count(true_false = Music.effects == "Improve")
 improved_responses <- improved_responses %>% filter(true_false == "TRUE")
 num_improved <- improved_responses %>% pull(n)
-summary_info$percent_improved <- round((num_improved / num_responses) * 100, digits = 2)
+summary_info$percent_improved <- paste0(round((num_improved / num_responses) * 100, digits = 2), "%")
 
 worsen_responses <- project_df %>% count(true_false = Music.effects == "Worsen")
 worsen_responses <- worsen_responses %>% filter(true_false == "TRUE")
 num_worsened <- worsen_responses %>% pull(n)
-summary_info$percent_worsened <- round((num_worsened / num_responses) * 100, digits = 2)
+summary_info$percent_worsened <- paste0(round((num_worsened / num_responses) * 100, digits = 2), "%")
 
 no_effect_responses <- project_df %>% count(true_false = Music.effects == "No effect")
 no_effect_responses <- no_effect_responses %>% filter(true_false == "TRUE")
 num_no_effect <- no_effect_responses %>% pull(n)
-summary_info$percent_no_effect <- round((num_no_effect / num_responses) * 100, digits = 2)
+summary_info$percent_no_effect <- paste0(round((num_no_effect / num_responses) * 100, digits = 2), "%")
+
+summary_info$percent_remaining_effect <- paste0((100 - percent_improved - percent_worsened - percent_no_effect), "%")
