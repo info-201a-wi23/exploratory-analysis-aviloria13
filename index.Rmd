@@ -3,6 +3,29 @@ title: "Mental Health & Music"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# load necessary library: dplyr, ggplot2
+library("dplyr")
+library("ggplot2")
+library("scales")
+library("knitr")
+library("reshape2")
+library("tidyverse")
+library("stringr")
+
+
+# load states dataframe into variable `project_df`
+project_df <- read.csv("/Users/aaliyahviloria/Desktop/INFO201/exploratory-analysis-aviloria13/mxmh_survey_results.csv", stringsAsFactors = FALSE)
+
+# source all R files
+source('Summary.R')
+source('Aggregate.R')
+source('Chart 2.R')
+source('Chart 3.R')
+```
+
 ### Authors
 
 Alice Chen, Aaliyah Viloria, Siyi Xu, Michelle Zhang 
@@ -80,12 +103,24 @@ Exploring the correlations between an individual's music taste and their mental 
 One of the limitations that our group project faces is that respondents assess their mental health only by self-report. The self-report exists a problem that respondents may not assess themselves accurately on self-report, and they may feel too embarrassed to reveal the truth by choosing a more acceptable choice. Also, the method of measuring mental health based on asking questions on whether they experience the disorders is not detailed and precise. People who do not have any psychological knowledge are unaware of the symptoms of these mental illnesses, so they may choose a low score on rating scale even if they do experience them. Therefore, the limitation of self-report may cause the probability of providing invalid information. Another limitation is that there is a low externality validity on generalization. The dataset has missing information on demographics and some genres that are not common, and the information of gender and race and other small music genres might provide interesting information to help find the relationship. In addition, the primary streaming service is Spotify, so the lack of music platforms might also impact generalization. The challenges that our group might face are the large size of the dataset and complex category of music genres. The size of our dataset is large with 737 respondents and 16 types of music genres, so they are more complex than what we usually work with. Another issue we will face is that some information on effect is missing, so we have to find out whether it impacts or not manually. It is important to acknowledge these limitations and challenges to the dataset in order to have a better understanding on the relationship between music and mental health and how it improves mental health. 
 
 ### Summary Information
-
-This dataset about mental health and music includes 736 responses, and 33 features. We have compared listening habits and effects between each number of listening hours in the aggregate table and the three charts below). There are 27 groups of listening hours. Out of all the respondents, 78.67% listen to music while working/studying, Rock is the most common genre listened to, 73.64% reported improved health, 2.31% reported worsened health, 22.96% reported no effect of music on their mental health, and the remaining 1.09% did not respond to the question. 
+ 
+This dataset about mental health and music includes `r summary_info$num_responses` responses, and `r summary_info$num_features` features. We have compared listening habits and effects between each number of listening hours in the aggregate table and the three charts below). There are `r summary_info$num_listening_groups` groups of listening hours. Out of all the respondents, `r summary_info$percent_while_working` listen to music while working/studying, `r summary_info$common_genre` is the most common genre listened to, `r summary_info$percent_improved` reported improved health, `r summary_info$percent_worsened` reported worsened health, `r summary_info$percent_no_effect` reported no effect of music on their mental health, and the remaining `r summary_info$percent_remaining_effect` did not respond to the question. 
 
 ### Table: Aggregate Music-Listening Data by Number of Listening Hours per Day
 
-``````{r, echo = FALSE, code = readLines("Aggregate.R")}
+```{r agg_table}
+table_caption <- "Aggregate Music-Listening Data by Number of Listening Hours per Day"
+
+knitr::kable(aggregate,
+             col.names = c("Hours per Day", 
+                           "Number of Reponses", 
+                           "Majority Age", 
+                           "Percentage of Improved Health", 
+                           "Percentage of Worsened Health", 
+                           "Percentage of No Health Effect", 
+                           "Majority Genre", 
+                           "Percentage of Listening While Working/Studying"),
+             caption = table_caption)
 ```
 
 This table shows aggregate information on listening behavior and the effects of such behavior on mental health, for varying listening hours per day. It is in ascending numerical order of the listening hours, and includes information about the number of responses, the most common age of the respondents, percentage of improved health, worsened health, and non-effected health, most common genre listened to, and percentage of respondents who listen to music while working/studying, all of which, were calculated for each group of listening hours. Looking at a table with 736 rows can be very complicated, especially when you're comparing values that are grouped by a certain attribute (e.g. compare data values between respondents of the age 18 vs. age 42), because the attribute may be spread out throughout a column. We created this aggregate table to make it easier to do such comparing, and we specifically grouped the data by the number of listening hours, because we wanted to see how the data varies with an increase in listening hours, especially how it has affected respondents' mental health. For all but 5 of the listening hour groups, at least 50% of the respondents reported improved health (with "no effect" being the majority response for the 5 groups). The first third of the groups (0 ot 2.5 listening hours) had an average of 63.21% improved health, the second third (3 to 10 hours) had an average of 73.22%, and the last third (11 to 24 hours) had an average of 64.82%. While it is difficult to compare these three percentage values between each other, because the number of responses for each group vary greatly (e.g. 1 response could result in 100% improved health), the averages being greater than 50% can show that music brings improvement to mental health overall.
